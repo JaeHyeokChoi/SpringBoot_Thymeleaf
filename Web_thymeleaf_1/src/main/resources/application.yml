@@ -1,13 +1,21 @@
 
 spring:
+    h2 : 
+      console : 
+        enabled: true # h2 setting
     thymeleaf:
         prefix : classpath:templates/
         suffix : .html
         cache : false
-        
+    jpa:
+        properties : 
+          hibernate : 
+            format_sql : true # 압축된 쿼리를 읽기 좋게 포멧
+            ddl-auto: create # 서버 시작에 테이블 생성
 logging:
   level: # 각 package 별로 로깅 레벨을 지정
     org.springframework.web : debug
+    org.hibernate.SQL: debug            # 로그 형식으로 쿼리 보여주기
     sql: error
     jdbc: off
     jdbc.sqlonly: debug 
