@@ -12,6 +12,7 @@ spring:
           hibernate : 
             format_sql : true # 압축된 쿼리를 읽기 좋게 포멧
             ddl-auto: create # 서버 시작에 테이블 생성
+            
 logging:
   level: # 각 package 별로 로깅 레벨을 지정
     org.springframework.web : debug
@@ -23,6 +24,11 @@ logging:
   file.max-history: 9999999 # 로그 파일 삭제 주기
   file.max-size : 100MB # 로그 파일 하나당 최대 파일 사이즈
 
+spring.datasource.url: jdbc:h2:mem:testdb
+spring.datasource.driverClassName: org.h2.Driver
+spring.datasource.username: sa
+spring.datasource.password:
+spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
 
 # Orcale / myBatis 설정 참고사이트 : https://youngjinmo.github.io/2020/10/springboot-mybatis-oracle/
 # 테이블 생성 : 참고사이트2 https://hanhyx.tistory.com/39 
