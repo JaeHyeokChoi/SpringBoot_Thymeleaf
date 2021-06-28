@@ -20,7 +20,7 @@ public class MainController {
         ModelAndView modelAndView = new ModelAndView();
         
         Map<String, Object> map = new HashMap<String, Object>();
-        map.put("name", "도미");
+        map.put("name", "DomiWorld");
         map.put("date", LocalDateTime.now());
         
         modelAndView.addObject("data", map);
