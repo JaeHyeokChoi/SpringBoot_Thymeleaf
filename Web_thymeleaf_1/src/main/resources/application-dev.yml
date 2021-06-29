@@ -1,0 +1,37 @@
+
+spring:
+  jpa:
+    database: POSTGRESQL
+    database-platform: org.hibernate.dialect.PostgreSQL95Dialect
+    show-sql: false
+    generate-ddl: true
+    hibernate:
+      ddl-auto: validate
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl    
+    properties:
+      hibernate:
+        dialect : org.hibernate.dialect.PostgreSQLDialect
+        jdbc:
+         lob:
+           non_contextual: true
+  datasource: # postgresql
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/domiworld
+    username: postgres
+    password: 1715
+
+  thymeleaf:
+      prefix : classpath:templates/
+      suffix : .html
+      cache : false
+    
+logging:
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+  level:
+    org.springframework: info
+    org.hibernate: debug
+
+# Orcale / myBatis 설정 참고사이트 : https://youngjinmo.github.io/2020/10/springboot-mybatis-oracle/
+# 테이블 생성 : 참고사이트2 https://hanhyx.tistory.com/39 

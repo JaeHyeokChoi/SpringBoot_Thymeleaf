@@ -7,11 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.domiworld.repository.UserRepository;
-import com.domiworld.service.MainService;
+import com.domiworld.service.UserService;
 import com.domiworld.vo.UserVO;
 
-@Service("mainService")
-public class MainServiceImpl implements MainService {
+@Service("userService")
+public class UserServiceImpl implements UserService {
 	
 	@Autowired
     private UserRepository userRepository;

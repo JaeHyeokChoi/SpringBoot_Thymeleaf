@@ -1,0 +1,43 @@
+
+spring:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    generate-ddl : true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql : true
+        use_sql_comments : true
+        format_sql : true
+  datasource: # h2 
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+    initialization-mode: always
+    schema: classpath:h2/schema.sql
+    data: classpath:h2/data.sql
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  thymeleaf:
+      prefix : classpath:templates/
+      suffix : .html
+      cache : false
+            
+logging:
+  level: # 각 package 별로 로깅 레벨을 지정
+    org.springframework.web : debug
+    org.hibernate.SQL: debug            # 로그 형식으로 쿼리 보여주기
+    jpa : debug
+    sql: error
+    jdbc: off
+    jdbc.sqlonly: debug 
+  file : /Users/Logs/java-spring-log # 로깅 파일 위치
+  file.max-history: 9999999 # 로그 파일 삭제 주기
+  file.max-size : 100MB # 로그 파일 하나당 최대 파일 사이즈
+
+# Orcale / myBatis 설정 참고사이트 : https://youngjinmo.github.io/2020/10/springboot-mybatis-oracle/
+# 테이블 생성 : 참고사이트2 https://hanhyx.tistory.com/39 

@@ -3,6 +3,7 @@ package com.domiworld;
 import javax.sql.DataSource;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
@@ -22,16 +23,16 @@ public class Application extends SpringBootServletInitializer{
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 	}
-	/*
-	// mybatis Bean 설정
+	
+	// mybatis Bean 설정 https://developyo.tistory.com/77
 	@Bean
-    public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
-        SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
-        sessionFactory.setDataSource(dataSource);
-        
-        Resource[] res = new PathMatchingResourcePatternResolver().getResources("classpath:mybatis/mapper/*.xml");
-        sessionFactory.setMapperLocations(res);
-        
-        return sessionFactory.getObject();
-    }*/
+	public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
+		SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
+		sessionFactory.setDataSource(dataSource);
+		
+		Resource[] res = new PathMatchingResourcePatternResolver().getResources("classpath:mappers/*Mapper.xml");
+		sessionFactory.setMapperLocations(res);
+		
+		return sessionFactory.getObject();
+	}
 }

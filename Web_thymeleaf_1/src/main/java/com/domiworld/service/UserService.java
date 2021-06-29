@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.domiworld.vo.UserVO;
 
-public interface MainService {
+public interface UserService {
 	 UserVO createUsers(UserVO vo) throws Exception;
 
      void deleteUsers(Long id) throws Exception;
