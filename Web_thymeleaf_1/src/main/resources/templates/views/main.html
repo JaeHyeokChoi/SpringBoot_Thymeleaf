@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <title>도미월드</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div th:text="${data.name}"></div>
-        <th:block th:text="${data.date}"/>
-        <div>Hi, hello World</div>
-    </body>
+<head>
+<title>title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<table class="tb_col">
+		<tr>
+			<th>id</th>
+			<th>password</th>
+			<th>email</th>
+			<th>name</th>
+		</tr>
+		<tr th:each="user : ${userList}">
+			<td th:text="${user.id}"></td>
+			<td th:text="${user.password}"></td>
+			<td th:text="${user.email}"></td>
+			<td th:text="${user.name}"></td>
+		</tr>
+	</table>
+</body>
 </html>
