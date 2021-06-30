@@ -39,5 +39,3 @@ logging:
   file.max-history: 9999999 # 로그 파일 삭제 주기
   file.max-size : 100MB # 로그 파일 하나당 최대 파일 사이즈
 
-# Orcale / myBatis 설정 참고사이트 : https://youngjinmo.github.io/2020/10/springboot-mybatis-oracle/
-# 테이블 생성 : 참고사이트2 https://hanhyx.tistory.com/39 

@@ -5,13 +5,13 @@
 
 <mapper namespace="com.domiworld.mapper.DomiWorldMapper">
   
-  <select id="getAll" resultType="domiVO">
+  <select id="getAll" resultType="com.domiworld.vo.DomiWorldVO">
     SELECT * FROM DOMIWORLD_ROLE_TEST;
   </select>
-  <select id="getOne" resultType="domiVO">
+  <select id="getOne" resultType="com.domiworld.vo.DomiWorldVO">
     SELECT * FROM DOMIWORLD_ROLE_TEST limit 1;
   </select>
-  <insert id="insertDomiWorld" parameterType="domiVO">
+  <insert id="insertDomiWorld" parameterType="com.domiworld.vo.DomiWorldVO">
     INSERT 
 		INTO DOMIWORLD_ROLE_TEST 
 	VALUES (,

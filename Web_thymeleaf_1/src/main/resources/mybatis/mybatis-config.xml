@@ -3,9 +3,8 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-    	<typeAlias alias="domiVO" type="com.domiworld.vo.DomiWorldVO"/>
+    	<typeAlias alias="domiWorldVO" type="com.domiworld.vo.DomiWorldVO"/>
 	</typeAliases>
-	
   <mappers>
     <mapper resource="DomiWorldMapper.xml"/>
   </mappers>

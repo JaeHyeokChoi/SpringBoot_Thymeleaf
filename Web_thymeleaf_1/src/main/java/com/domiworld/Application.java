@@ -10,6 +10,7 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 
 @SpringBootApplication
 public class Application extends SpringBootServletInitializer{
@@ -24,15 +25,4 @@ public class Application extends SpringBootServletInitializer{
 		SpringApplication.run(Application.class, args);
 	}
 	
-	// mybatis Bean 설정 https://developyo.tistory.com/77
-	@Bean
-	public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
-		SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
-		sessionFactory.setDataSource(dataSource);
-		
-		Resource[] res = new PathMatchingResourcePatternResolver().getResources("classpath:mappers/*Mapper.xml");
-		sessionFactory.setMapperLocations(res);
-		
-		return sessionFactory.getObject();
-	}
 }
