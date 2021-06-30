@@ -16,14 +16,14 @@ import lombok.extern.slf4j.Slf4j;
 
 @Controller
 @Slf4j
-@RequestMapping(value = "main")
+@RequestMapping(value = "domiWorld")
 public class DomiWorldController {
 	
 	@Autowired
 	private DomiWorldService domiWorldService;
 	
 	@GetMapping(value = "/index.do")
-    public ModelAndView main() throws Exception {
+    public ModelAndView domiWorldMain() throws Exception {
 		log.info("MAIN2 CONTROLLER INDEX START");
         ModelAndView modelAndView = new ModelAndView();
       

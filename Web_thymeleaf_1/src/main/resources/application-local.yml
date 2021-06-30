@@ -1,15 +1,21 @@
 
 spring:
-  jpa:
+  main:
+    allow-bean-definition-overriding: true # boot 2.1 이후 빈 중복생성 막혔기 때문에 선언.
+  jpa: # jpa
+    show-sql : true
+    generate-ddl : false
+    database: postgresql
     database-platform: org.hibernate.dialect.H2Dialect
-    generate-ddl : true
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     properties:
       hibernate:
         show_sql : true
         use_sql_comments : true
         format_sql : true
+        jdbc.lob.non_contextual_creation: true
+        temp.use_jdbc_metadata_defaults: false
   datasource: # h2 
     url: jdbc:h2:mem:testdb
     driverClassName: org.h2.Driver
@@ -26,7 +32,14 @@ spring:
       prefix : classpath:templates/
       suffix : .html
       cache : false
-            
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    jdbc-type-for-null: varchar
+
+mybatis.type-aliases-package : com.domiworld
+mybatis.mapper-locations : mybatis/mapper/**/*.xml   
+
 logging:
   level: # 각 package 별로 로깅 레벨을 지정
     org.springframework.web : debug

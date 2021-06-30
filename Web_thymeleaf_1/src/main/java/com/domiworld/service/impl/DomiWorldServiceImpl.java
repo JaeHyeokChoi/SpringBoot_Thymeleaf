@@ -10,7 +10,7 @@ import com.domiworld.mapper.DomiWorldMapper;
 import com.domiworld.service.DomiWorldService;
 import com.domiworld.vo.DomiWorldVO;
 
-@Service("domiWorldService")
+@Service
 public class DomiWorldServiceImpl implements DomiWorldService {
 	
 	@Autowired

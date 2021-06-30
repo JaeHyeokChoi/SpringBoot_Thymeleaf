@@ -10,7 +10,7 @@ import com.domiworld.repository.UserRepository;
 import com.domiworld.service.UserService;
 import com.domiworld.vo.UserVO;
 
-@Service("userService")
+@Service
 public class UserServiceImpl implements UserService {
 	
 	@Autowired

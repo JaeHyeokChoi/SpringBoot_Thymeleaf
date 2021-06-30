@@ -3,10 +3,12 @@ spring:
   main:
     allow-bean-definition-overriding: true # boot 2.1 이후 빈 중복생성 막혔기 때문에 선언.
   jpa: # jpa
-    database-platform: org.hibernate.dialect.H2Dialect
-    generate-ddl : true
+    show-sql : true
+    generate-ddl : false
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     properties:
       hibernate:
         show_sql : true
@@ -15,10 +17,17 @@ spring:
         jdbc.lob.non_contextual_creation: true
         temp.use_jdbc_metadata_defaults: false
   datasource: # postgresql
-    driver-class-name: org.postgresql.Driver
+    driverClassName: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/domiworld
     username: postgres
     password: 1715
+    hikari:
+      auto-commit: false
+      connection-test-query: SELECT 1
+      minimum-idle: 10
+      maximum-pool-size: 50
+      transaction-isolation: TRANSACTION_READ_UNCOMMITTED
+      pool-name: pool-domiworld
   h2:
     console:
       enabled: true

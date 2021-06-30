@@ -17,7 +17,8 @@
 		<tr th:each="user : ${userList}">
 			<td th:text="${user.userId}"></td>
 			<td th:text="${user.password}"></td>
-			<td th:text="${user.userEmail}"></td>
+			<td th:text="${user.email}"></td>
+			<td th:text="${user.userName}"></td>
 			<td th:text="${user.lastLogin}"></td>
 		</tr>
 	</table>

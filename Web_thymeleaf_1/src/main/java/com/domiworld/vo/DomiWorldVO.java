@@ -15,7 +15,7 @@ public class DomiWorldVO implements Serializable{
 	private Long userId;
 	private String userName;
 	private String password;
-	private String userEmail;
+	private String email;
 	private String lastLogin;
 
 }
