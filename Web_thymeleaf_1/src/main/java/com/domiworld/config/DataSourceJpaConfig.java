@@ -56,6 +56,7 @@ public class DataSourceJpaConfig {
                 .persistenceUnit("jpaEntityManager")
                 .properties(properties)
                 .build();
+        
     }
 
     @Bean
