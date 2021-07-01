@@ -5,7 +5,6 @@ spring:
   jpa: # jpa
     show-sql : true
     generate-ddl : false
-    database: postgresql
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
       ddl-auto: create

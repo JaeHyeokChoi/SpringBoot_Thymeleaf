@@ -5,10 +5,9 @@ spring:
   jpa: # jpa
     show-sql : true
     generate-ddl : false
-    database: postgresql
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
-      ddl-auto: update
+      ddl-auto: create # 자동생성 끄기 : none
     properties:
       hibernate:
         show_sql : true
@@ -16,7 +15,7 @@ spring:
         format_sql : true
         jdbc.lob.non_contextual_creation: true
         temp.use_jdbc_metadata_defaults: false
-  datasource: # postgresql
+  datasource1: # postgresql
     driverClassName: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/domiworld
     username: postgres
@@ -28,6 +27,14 @@ spring:
       maximum-pool-size: 50
       transaction-isolation: TRANSACTION_READ_UNCOMMITTED
       pool-name: pool-domiworld
+  datasource2: # h2
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+    initialization-mode: always
+    schema: classpath:h2/schema.sql
+    data: classpath:h2/data.sql
   h2:
     console:
       enabled: true

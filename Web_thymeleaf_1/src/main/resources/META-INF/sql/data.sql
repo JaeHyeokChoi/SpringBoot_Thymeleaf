@@ -1,0 +1,1 @@
+INSERT INTO USER_DOMIWORLD VALUES (1, '1234', 'https://www.daum.net', 'Jae Hyeok Choi'), (2, '1234', 'https://www.daum.net', 'Jae Hyeok Choi')

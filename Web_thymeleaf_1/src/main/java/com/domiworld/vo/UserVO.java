@@ -8,13 +8,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Entity
-@Table(name="user")
+@Data
+@Table(name="USER_DOMIWORLD")
 public class UserVO implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
