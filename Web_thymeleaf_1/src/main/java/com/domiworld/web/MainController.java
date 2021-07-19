@@ -22,6 +22,12 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping(value = "main")
 public class MainController {
 	
+	/**
+	 * 
+	 * JPA - H2 데이터 main view
+	 * 
+	 * */
+	
 	@Autowired
 	private UserService mainService;
 	

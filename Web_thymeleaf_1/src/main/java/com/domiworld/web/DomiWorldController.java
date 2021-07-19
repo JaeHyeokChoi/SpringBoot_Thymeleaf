@@ -19,6 +19,12 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping(value = "domiWorld")
 public class DomiWorldController {
 	
+	/**
+	 * 
+	 * myBatis - postgresql 데이터 main view
+	 * 
+	 * */
+	
 	@Autowired
 	private DomiWorldService domiWorldService;
 	
