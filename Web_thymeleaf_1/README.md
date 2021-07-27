@@ -14,7 +14,8 @@ This system is a system in which the screen is dynamically implemented using tim
 
 ```
 2021-07-01 h2+jpa SUCCESS / mybatis+postgresql SUCCESS. 
-Question : h2 persistence.xml 설정 한 SQL 자동생성 안됨. (수동으로 데이터 넣고는 가능)
+Question : h2 persistence.xml 설정 한 SQL 자동생성 개발 중 
+= 수동 개발 가능
 ```
 
 
